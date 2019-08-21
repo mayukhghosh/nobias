@@ -14,9 +14,6 @@ Python 3.7\
 Pandas\
 numpy
 
-```bash
-pip install foobar
-```
 ## Json format
 The data is in the following format:
 * userID (string): A random id assigned to each user
@@ -26,8 +23,8 @@ The data is in the following format:
   * hostname (string): The host url, it should be google.com, feel free to ignore
   * timestamp (string): UTC formatted timestamp string of when the search was done
   * searchResults (list/array): A list of json objects, where each objects contains a single news article from the search page
-    - title (string): The title of the news article
-    - url (string): The url of the news article
+    * title (string): The title of the news article
+    * url (string): The url of the news article
 
 Note: The timestamp field is missing in some of the files.
 
@@ -103,4 +100,12 @@ Enter k: 10
 `k` is entered by the user which indicates that the top 10 common search-query terms are shown. The following figure is also shown.
 
 ![Image](images/query_common.png)
+
+The rest of the options work in a similar way too.
+
+## References
+The .json files and the format information is taken from the following site.
+
+[Nobias data visualizaton](https://www.notion.so/Nobias-Data-Visualization-Project-4643ed5a100d47099ec5f20b992fd68a)
+
 
