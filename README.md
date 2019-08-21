@@ -101,11 +101,13 @@ If the user enters option 3, the following is the output:
 Enter choice number: 3
 Enter k: 10
 ```
-`k` is entered by the user which indicates that the top 10 common search-query terms are shown. The following figure is also shown.
+`k` is entered by the user which indicates that the top 10 common search-query terms are shown. The following figure is also shown. Close the matplotlib window to continue.
 
 ![Image](images/query_common.png)
 
 The rest of the options work in a similar way too.
+
+Option 5 takes a word/phrase from the user and show the top `k` terms in search results whose queries have the word/phrase. This shows the relationship between the search-query and search-result.
 
 ## References
 The .json files are provided by Nobias and the format information is taken from the following site.
