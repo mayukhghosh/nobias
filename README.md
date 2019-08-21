@@ -108,7 +108,7 @@ Enter k: 10
 The rest of the options work in a similar way too.
 
 ## References
-The .json files and the format information is taken from the following site.
+The .json files are provided by Nobias and the format information is taken from the following site.
 
 [Nobias data visualizaton](https://www.notion.so/Nobias-Data-Visualization-Project-4643ed5a100d47099ec5f20b992fd68a)
 
