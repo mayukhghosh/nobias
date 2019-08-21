@@ -30,7 +30,7 @@ Note: The timestamp field is missing in some of the files.
 
 The .json files are stored in `\data\`.
 
-Additionally, '\data\queries\' has a query file for each of the original files. These store just queries for the particular person for easier processing of data.
+Additionally, `\data\queries\` has a query file for each of the original files. These store just queries for the particular person for easier processing of data.
 
 The folder also has `key_phrases.txt` which stores certain key words which tells the program to group certain words together, rather than as separate entities. For example, 'liz cheney' might make better sense than 'liz' and 'cheney.'
 
