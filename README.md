@@ -40,7 +40,7 @@ The program can be run by simply executing the `main.py` from the `src\` folder 
 python main.py
 ```
 Following which, the name of the various data files containing the search histories will be shown along with a menu which will have various options to explore the data. This is the output when the above command is run:
-```shell
+```console
 There are 5 files with the search history of 5 people. They are
 
 p1
@@ -64,7 +64,7 @@ One can choose any of the options to view particular trends in the search histor
 
 For example, the following is the output when the user enters 4.
 
-```shell
+```console
 Enter choice number: 4
 Enter the names of people whose search history is to be compared(Atleast 2).
 Enter names separated by comma: p3,p4,p5
@@ -97,7 +97,7 @@ minimum
 Note that `p3,p4,p5` in the third line is entered by the user.
 
 If the user enters option 3, the following is the output:
-```bash
+```console
 Enter choice number: 3
 Enter k: 10
 ```
