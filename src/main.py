@@ -40,7 +40,7 @@ def display_data(files,ch):
 def menu():
     print('Choose an option ')
     print('1) Display raw json data of person(s).')
-    print('2) Display all search query results of person(s)')
+    print('2) Display all search queries of person(s)')
     print('3) Display k-most used terms in search queries of users.')
     print('4) Display similarity of search terms in user queries.')
     print('5) Display k-most common term in search-results of users based on a search-query word/phrase.')
