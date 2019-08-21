@@ -109,7 +109,7 @@ The rest of the options work in a similar way too.
 
 Option 5 takes a word/phrase from the user and show the top `k` terms in search results whose queries have the word/phrase. This shows the relationship between the search-query and search-result.
 
-The following is the visualization for option 5. It shows the 10 most appearing terms in search results when the search query of the user contained the term 'election 2020'.
+The following is the visualization for option 5. It shows the 10 most appearing terms in search results when the search query of the users contained the term 'election 2020'.
 
 ![Image](images/result_common.png)
 
