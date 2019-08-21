@@ -42,7 +42,7 @@ def menu():
     print('1) Display raw json data of person(s).')
     print('2) Display all search queries of person(s)')
     print('3) Display k-most used terms in search queries of users.')
-    print('4) Display similarity of search terms in user queries.')
+    print('4) Display search query terms in common for different person(s).')
     print('5) Display k-most common term in search-results of users based on a search-query word/phrase.')
     print('6) Exit')
     ch = int(input("Enter choice number: "))
@@ -74,7 +74,7 @@ def main():
             person_lst=input("Enter the names of people whose search history is to be compared(Atleast 2).\nEnter names separated by comma: ")
             if(len(person_lst.split(','))>1 and len(person_lst.split(','))<=len(files)):
                 similar_terms=process_terms.common_terms(person_lst)
-                print('The common search-query terms for the above users are:\n')
+                print('The search-query terms in common for the above users are:\n')
                 for terms in similar_terms:
                     print (terms)
             else:
@@ -95,7 +95,7 @@ def main():
         elif(ch==6):
             break
         else:
-            print('Input not recognized.')
+            print('Invalid input.')
 
         print("----------------------Press any key and <enter> to continue----------------------")
         inp=input("----------------------Press q and <enter> to exit----------------------\n")
