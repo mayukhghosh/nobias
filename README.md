@@ -1,6 +1,6 @@
 # Data visualization of search history
 
-This program visualizes search history data stored in .json files. The main features of this program are:\
+This program visualizes search history data stored in .json files. The main features of this program are:
 * Find the k-most used terms in search-queries of all the users.
 * Find the similarity of search terms among users.
 * Find the k-most common terms in search results of users based on a search query word/phrase.
