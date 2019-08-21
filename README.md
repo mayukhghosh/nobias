@@ -30,12 +30,16 @@ Note: The timestamp field is missing in some of the files.
 
 The .json files are stored in `\data\`.
 
+Additionally, '\data\queries\' has a query file for each of the original files. These store just queries for the particular person for easier processing of data.
+
+The folder also has `key_phrases.txt` which stores certain key words which tells the program to group certain words together, rather than as separate entities. For example, 'liz cheney' might make better sense than 'liz' and 'cheney.'
+
 ## Usage
 The program can be run by simply executing the `main.py` from the `src\` folder like this:
 ```python
 python main.py
 ```
-Following which, the name of the various data files containing the search histories will be shown along with a menu which will have various options to explore the data. This is the output when the above command is  run:
+Following which, the name of the various data files containing the search histories will be shown along with a menu which will have various options to explore the data. This is the output when the above command is run:
 ```shell
 There are 5 files with the search history of 5 people. They are
 
@@ -58,7 +62,7 @@ Enter choice number:
 
 One can choose any of the options to view particular trends in the search history data.
 
-For example, the following shows the output when the user chooses 4 as his choice.
+For example, the following is the output when the user enters 4.
 
 ```shell
 Enter choice number: 4
@@ -92,7 +96,7 @@ minimum
 ```
 Note that `p3,p4,p5` in the third line is entered by the user.
 
-If the user chooses option 3, the following is the output:
+If the user enters option 3, the following is the output:
 ```bash
 Enter choice number: 3
 Enter k: 10
