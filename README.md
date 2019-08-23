@@ -4,6 +4,7 @@ This program visualizes search history data stored in .json files. The main feat
 * Find the k-most used terms in search-queries of all the users.
 * Find the similarity of search terms among users.
 * Find the k-most common terms in search results of users based on a search query word/phrase.
+* Show trends for a particular search word/phrase through time for all persons
 * View raw json data of person(s).
 * View the search queries of person(s).
  
