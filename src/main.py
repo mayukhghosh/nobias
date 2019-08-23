@@ -44,7 +44,7 @@ def menu():
     print('3) Display k-most used terms in search queries of users.')
     print('4) Display search query terms in common for different person(s).')
     print('5) Display k-most common terms in search-results of users based on a search-query word/phrase.')
-    print('6) Display search query trend across time for different persons.')
+    print('6) Display search query trend across time for all persons.')
     print('7) Exit')
     ch = int(input("Enter choice number: "))
     return ch
