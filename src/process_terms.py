@@ -26,7 +26,7 @@ def common_terms(files):
         for word in a.lower().split():
             if word not in stopwords:
                 terms[i].append(word)
-
+    #Finds intersection of the sets where each set contains terms for a single person
     common=set(terms[0])
     for i in terms[1:]:
         common.intersection_update(i)
@@ -174,17 +174,63 @@ def search_results(data_dir,search_term,k):
     
 
     word_counter = collections.Counter(wordcount)
-    print('The common terms in search-results are\n')
+    print('\nThe common terms in search-results are')
     for word, count in word_counter.most_common(k):     
         print(word, ": ", count)
         final_lst.append((word,count))
     
     return final_lst
 
+#search for trends across time for a particular search-query term
+def time_search(data_dir,search_term):
+    files=os.listdir(data_dir)
+    files.remove('queries')
+    results=[]
+    for i in range(len(files)):
+        results.append({})
+
+    for cnt,file in enumerate(files,0):
+        out=json_read.raw_data(data_dir+file)
+        out=json.loads(out)
+        for i in range(1,len(out['searchData'])):
+            u=out['searchData'][i]['searchQueryString']#search query string may not always be present in the data
+            if(u is None):
+                continue
+            if(search_term in out['searchData'][i]['searchQueryString']):#timestamp may not always be present in the data
+                if('timestamp' in out['searchData'][i]):
+                    time=out['searchData'][i]['timestamp'].split('T')[0]
+                    if(time not in results[cnt]):
+                        results[cnt][time]=1
+                    else:
+                        results[cnt][time]+=1
+    return (results)
+
+
+
+
 # Create a data frame of the most common words 
 # Draw a bar chart
 def display_bar(lst,search_term=None):
-    if(type(lst[0])==tuple):#For displaying search-results
+    if(type(lst[0])==dict):#For displaying search trends across time
+        not_avl=[]
+        fig,ax=plt.subplots()
+        for i,ts in enumerate(lst):
+            if (ts):
+                df=pd.DataFrame(list(ts.items()),columns=['Date','p'+str(i+1)])
+                df['Date']=pd.to_datetime(df['Date'])
+                df.set_index('Date',inplace=True)
+                print(df)
+                df.plot(ax=ax)
+            else:
+                not_avl.append(str(i+1))
+        
+        print('****************************')
+        for i in not_avl:
+            print('Data for p'+(i)+' not available.')
+        print('****************************')
+        plt.title('Search-query trend for "'+search_term+'"',fontsize=16)
+        plt.show()
+    elif(type(lst[0])==tuple):#For displaying search-results
         fig,axes=plt.subplots(nrows=1,ncols=1)
         df = pd.DataFrame(lst, columns = ['Word', 'Count'])
         df.plot.bar(ax=axes,x='Word',y='Count')

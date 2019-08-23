@@ -44,13 +44,15 @@ def menu():
     print('3) Display k-most used terms in search queries of users.')
     print('4) Display search query terms in common for different person(s).')
     print('5) Display k-most common terms in search-results of users based on a search-query word/phrase.')
-    print('6) Exit')
+    print('6) Display search query trend across time for different persons.')
+    print('7) Exit')
     ch = int(input("Enter choice number: "))
     return ch
 
 #displays menu and driver functions
 def main():
     num_users,users=check_query_files()
+    #displays the names of the files/persons which contain their search histories
     print('There are '+ str(num_users) +' files with the search history of 5 people. They are\n')
     for user in users:
         print(user.split('.')[0])
@@ -78,7 +80,7 @@ def main():
                 for terms in similar_terms:
                     print (terms)
             else:
-                print('Invalid input')
+                print('Invalid input. Enter atleast two names.')
         elif(ch==5):
             k = int(input("Enter k: "))
             print("Some of the most used words/phrases in search queries are:")
@@ -93,6 +95,18 @@ def main():
             result_lst=process_terms.search_results(data_dir,search_term,k)
             process_terms.display_bar(result_lst,search_term)
         elif(ch==6):
+            print("Some of the most used words/phrases in search queries are:")
+            common_lst=process_terms.most_used_terms(data_dir,10)
+            recent=[]
+            for person in (common_lst):
+                for word,count in person:
+                    if(count>10 and word not in recent):
+                        print(word)
+                        recent.append(word)
+            search_term=input('Enter word/phrase to show trends for: ')
+            result_lst=process_terms.time_search(data_dir,search_term)
+            process_terms.display_bar(result_lst,search_term)
+        elif(ch==7):
             break
         else:
             print('Invalid input.')
@@ -106,5 +120,6 @@ def main():
 
 
 main()
+
 
 
